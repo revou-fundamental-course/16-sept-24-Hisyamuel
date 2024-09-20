@@ -1,1 +1,27 @@
 /* Ini CSS */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+}
+
+nav>a {
+    border: 1px solid;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.logo-icon {
+    height: 50px;
+    width: 50px;
+    background-image: url(../assets/channels4_profile.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
