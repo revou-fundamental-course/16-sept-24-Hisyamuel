@@ -25,3 +25,19 @@ nav>a {
     background-position: center;
     border-radius: 50%;
 }
+
+header>h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+article>p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.photo-banner {
+    border: 1px solid;
+    background-image: url(../assets/channels4_profile.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+}
