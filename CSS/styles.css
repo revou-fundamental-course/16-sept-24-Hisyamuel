@@ -66,4 +66,43 @@ p {
     border-radius: 50%;
 }
 
+.slider-frame {
+    overflow: scroll;
+    height: 800px;
+    width: 1350px;
+}
 
+@keyframes slide_animation{
+    0% {left: 0px;}
+    10% {left: 0px;}
+    20% {left: 800px;}
+    30% {left: 800px;}
+    40% {left: 1350px;}
+    50% {left: 1350px;}
+    60% {left: 800px;}
+    70% {left: 800px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left: 0px;}
+}
+
+.slide-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 -1350px;
+    position: relative;
+    animation-name: slide_animation;
+    animation-duration: 33s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+}
+
+.img-container {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    position: relative;
+    float: left;
+}
