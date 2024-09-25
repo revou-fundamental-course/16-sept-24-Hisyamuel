@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Revou Mini Project-Hisyam</title>
+    <style type="text/css">
+        body {
+            background-image: url(assets/background.jpg);
+        }
+    </style>
     <link rel="stylesheet" href="CSS\styles.css">
 </head>
 <body>
@@ -28,16 +33,11 @@
             <header>
                 <h1>Hi User, Welcome to My Website</h1>
             </header>
-
+            
             <article>
-                <p>Assalamu'alaikum warahmatullahi wabarakatuh. Perkenalkan nama saya <i><b>Nur Amali Hisyam</b></i>, 
-                    saya berasal dari <i><b>Samarinda</b></i>. Saya ingin sekali menjadi seorang <b>FrontEnd Developer</b>.
-                    Saya harap saya bisa mencapai impian saya. Kebetulan ini adalah projek website portofolio saya. Doakan saya 
-                    ya teman-teman. Terima kasih sudah berkunjung. Wassalamu'alaikum warahmatullahi wabarakatuh.
-                </p>
-
-                <!--Photo Banner-->
-                <div class="photo-banner"></div>
+                <p>Terima kasih sudah berkunjung.</p>
+                <!--Photo Banner Slider-->
+                
             </article>
         </section>
 
@@ -47,13 +47,25 @@
         <section id="section-my-profile">
             <header>
                 <h1>My Profile</h1>
-            </header>
+                <p>
+                  Assalamu'alaikum warahmatullahi wabarakatuh. Perkenalkan nama saya <i><b>Nur Amali Hisyam</b></i>, 
+                  saya berasal dari <i><b>Samarinda</b></i>. Saya ingin sekali menjadi seorang <b>FrontEnd Developer</b>.
+                  Saya harap saya bisa mencapai impian saya. Kebetulan ini adalah projek website portofolio saya. Doakan saya 
+                  ya teman-teman. Jika ingin berkenalan lebih lanjut silahkan hubungi saya di beberapa sosial media di bawah. 
+                  Sekian perkenalan dari saya, wassalamu'alaikum warahmatullahi wabarakatuh.
+                </p>
 
-            <div>
-                <div></div>
-                
-                <h2></h2>
-            </div>
+                <!--Logo Profile Sosial Media-->
+                <div class="logo-profile">
+                    <a href="https://www.instagram.com/smhsymz/">
+                        <div class="logo-profile1"></div>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=6282159103747&text=Hi">
+                        <div class="logo-profile2"></div>
+                    </a>
+                    <div class="logo-profile3"></div>
+                </div>
+            </header>
         </section>
 
         <hr />
@@ -74,43 +86,40 @@
             </header>
  
             <section>
-                <!--Form-->
-            <form>
-                <label for="name">Nama : 
-                    <input id="name" type="text" />
+            <!--Form-->
+            <form name="message-form" onsubmit="return validateForm()">
+              Nama : <input placeholder="Nama" type="text" name="full-name" />
+              <br />
 
+              <br />
+              Tanggal Lahir :
+              <input type="date" name="birth-date" />
+              <br />
 
-                    <br>
+              <br />
+              Jenis Kelamin :
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Laki-laki</label>
+              <input type="radio" id="female" name="gender" value="male" />
+              <label for="female">Perempuan</label>
+              <br />
 
-                    <br>
+              <br />
+              <p>Pesan :</p>
+              <textarea rows="8" cols="64" name="messages"></textarea>
+              <br />
 
-
-                    <label for="tanggal lahir">Tanggal Lahir : </label>
-                    <input id="tanggal lahir" />
-
-                    <br>
-
-                    <p>Jenis Kelamin :</p>
-
-                    <input type="radio" id="gender" name=""jenis_kelamin" value="Gender">
-                    <label for="gender">Laki-laki</label><br> 
-
-                    <br> 
-
-                    <input type="radio" id="gender" name=""jenis_kelamin" value="Gender">
-                    <label for="gender">Perempuan</label><br>
-                    
-                    <p>Pesan :</p>
-                    <textarea rows="8" cols="64">Text Here</textarea>
-
-                    <br>
-
-                    <input type="submit" value="Submit">
-                </label>   
+              <input type="submit" value="Submit" />       
             </form>
             </section>
+
             <!--Result Form-->
-            <div></div>
+            <div>                
+                <p>Nama : <span id="sender-full-name"></span></p>
+                <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
+                <p>Jenis Kelamin : <span id="sender-gender"></span></p>
+                <p>Pesan : <span id="sender-messages"></span></p>
+            </div>
         </section>
     </main>
 
