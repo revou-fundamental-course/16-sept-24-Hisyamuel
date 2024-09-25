@@ -1,25 +1,56 @@
-// Ini Javascript 2
+// Ini Javascript 2 //
 
-function validateForm() {
-    const name = document.forms["message-form"]["full-name"].value;
-    const birthDate = document.forms["message-form"]["birth-date"].value;
-    const gender = document.forms["message-form"]["gender"].value;
-    const messages = document.forms["message-form"]["messages"].value;
+// Kata Sambutan //
 
-    if (name == "" || birthDate == "" || gender == "" || messages == "") {
-      alert("Tidak boleh ada yang kosong");
-      
-      return false;  
-    }
+replaceName();
 
-    setSenderUI(name, birthDate, gender, messages);
-
-    return false;
+function replaceName() {
+  let name = prompt('Masukkan nama Anda');
+  console.log(name);
+  document.getElementById('user-name').innerHTML = name;
 }
 
-function setSenderUI(name, birthDate, gender, messages) {
-    document.getElementById("sender-full-name").innerHTML = name;
-    document.getElementById("sender-birth-date").innerHTML = birthDate;
-    document.getElementById("sender-gender").innerHTML = gender;
-    document.getElementById("sender-messages").innerHTML = messages;
+// Form //
+
+const form = document.getElementById('messageForm');
+form.addEventListener('submit'), function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const birth = document.getElementById('birth').value;
+  const gender = document.getElementById('gender').value;
+  const message = document.getElementById('message').value;
+
+  if (!name || !birth || !gender || !message) {
+      alert('Pesan Harus Terisi');
+      return;
+  }
+
+  // Output Form //
+
+  const formOutput = document.getElementById('formOutput'); 
+    formOutput.value = 
+        Name ; {name}
+        Birth ; {birth}
+        Gender ; {gender}
+        Message ; {message}
+    ;
+    
+  document.getElementById('moreInfoBtn').addEventListener('click', function() {
+      const moreInfo = document.getElementById('moreInfo');
+      if (moreInfo.style.display === 'none') {
+          moreInfo.style.display = 'block';
+          this.textContent = 'Sembunyikan Info';
+      } else {
+          moreInfo.style.display = 'none';
+          this.textContent = 'Lebih banyak Info';
+      }
+  });
+
+  if (!name || !birth || !gender || !message) {
+      alert('Pesan Harus Terisi');
+      return;
+  }
 }
+  
+

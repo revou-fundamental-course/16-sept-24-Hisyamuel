@@ -1,21 +1,56 @@
 /* Ini CSS */
 
+/* Body */
+
+body {
+    background-image: url(../assets/background.jpg);
+    padding: 0;
+    margin: 1;
+}
+
+/* Main Header */
+
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav {
-    display: flex;
+@media only screen and (max-width: 375px) {
+    .main-header {
+        flex-direction: column;
+    }   
 }
 
-nav>a {
-    border: 1px solid;
-    padding: 8px;
-    color: black;
-    text-decoration: none;
+/* Home */
+
+.inline {
+    display: inline;
 }
+
+/* Navigasi */
+
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    gap: 1rem;
+    list-style: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav>ul>li>a {
+    border: none;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+nav>ul>li>a:hover {
+    border-bottom: 1px solid #000080;
+}
+
+/* Logo Icon */
 
 .logo-icon {
     height: 50px;
@@ -26,6 +61,8 @@ nav>a {
     border-radius: 50%;
 }
 
+/* Kata Sambutan */
+
 header>h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000080;
@@ -35,41 +72,12 @@ p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.logo-profile {
-    display: flex;
-}
-
-.logo-profile1 {
-    height: 100px;
-    width: 100px;
-    background-image: url(../assets/instagram.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-}
-
-.logo-profile2 {
-    height: 100px;
-    width: 100px;
-    background-image: url(../assets/whatsapp.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 100%;
-}
-
-.logo-profile3 {
-    height: 100px;
-    width: 100px;
-    background-image: url(../assets/linkedin.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-}
+/* Photo Banner Slide */
 
 .slider-frame {
     overflow: scroll;
-    height: 800px;
-    width: 1350px;
+    height: 100%;
+    width: 100%;
 }
 
 @keyframes slide_animation{
@@ -105,4 +113,112 @@ p {
     background-position: center;
     position: relative;
     float: left;
+}
+
+/* My Profile */
+
+.logo-profile {
+    display: flex;
+}
+
+.logo-profile1 {
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/instagram.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.logo-profile2 {
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/whatsapp.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+}
+
+.logo-profile3 {
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/linkedin.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+/* Portfolio */
+
+.logo-portfolio {
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/foto-diri.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+}
+
+/* Form */
+
+.contact-form {
+    text-align: center;
+    padding: 30px;
+    background-color: bisque;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #000080;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid cornflowerblue;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #000080;
+    outline: none;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: rgb(61, 98, 167);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: aqua;
+    transform: scale(1.05);
+}
+
+/* Output Form */
+
+#formOutput {
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    resize: none;
+    text-align: left;
+}
+
+.contact-form label[for="formOutput"] {
+    text-align: left;
+    display: block;
+    margin-top: 10px;
 }

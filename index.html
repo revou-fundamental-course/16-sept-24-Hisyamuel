@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revou Mini Project-Hisyam</title>
-    <style type="text/css">
-        body {
-            background-image: url(assets/background.jpg);
-            padding: 0;
-            margin: 1;
-        }
-    </style>
     <link rel="stylesheet" href="CSS\styles.css">
 </head>
 <body>
@@ -19,11 +12,21 @@
         <div class="logo-icon"></div>
 
         <!--Navigation-->
-        <nav>
-            <a href="#section-home">Home</a>
-            <a href="#section-my-profile">My Profile</a>
-            <a href="#section-portfolio">Portfolio</a>
-            <a href="#section-message-me">Message Me</a>
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a href="#section-home">Home</a>
+                </li>
+                <li>
+                    <a href="#section-my-profile">My Profile</a>
+                </li>
+                <li>
+                    <a href="#section-portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#section-message-me">Message Me</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
@@ -33,7 +36,7 @@
         <!---Home--->
         <section id="section-home"></section>
             <header>
-                <h1>Hi User, Welcome to My Website</h1>
+                <h1 class="inline">Hi <h1 class="inline" id="user-name">User</h1><h1 class="inline">, Welcome to My Website</h1>
             </header>
             
             <article>
@@ -48,7 +51,7 @@
                             <img src="image/../assets/yt-channel.jpg">
                         </div>
                         <div class="img-container">
-                            <img src="image/../assets/background.jpg">
+                            <img src="image/../assets/wallpaper.png">
                         </div>
                     </div>
                 </div>
@@ -77,7 +80,9 @@
                     <a href="https://api.whatsapp.com/send?phone=6282159103747&text=Hi">
                         <div class="logo-profile2"></div>
                     </a>
-                    <div class="logo-profile3"></div>
+                    <a href="https://www.linkedin.com/in/nur-amali-hisyam-7427331a3/">
+                        <div class="logo-profile3"></div>
+                    </a>
                 </div>
             </header>
         </section>
@@ -88,6 +93,9 @@
         <section id="section-portfolio">
             <header>
                 <h1>Portfolio</h1>
+                <a href="https://www.canva.com/design/DAGRuwYO8q8/QwVvw_hWEXztByNvXXBAlQ/view?utm_content=DAGRuwYO8q8&utm_campaign=designshare&utm_medium=link&utm_source=editor">
+                    <div class="logo-portfolio"></div>
+                </a>
             </header>
         </section>
 
@@ -95,45 +103,34 @@
 
         <!---Message Me--->
         <section id="section-message-me">
+        <!--Form-->
             <header>
                 <h1>Message Me</h1>
             </header>
- 
-            <section>
-            <!--Form-->
-            <form name="message-form" onsubmit="return validateForm()">
-              Nama : <input placeholder="Nama" type="text" name="full-name" />
-              <br />
+            <form id="messageForm">
+                <label form="name">Nama :</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
 
-              <br />
-              Tanggal Lahir :
-              <input type="date" name="birth-date" />
-              <br />
+                <label form="birth">Tanggal Lahir :</label>
+                <input type="date" id="birth" name="birth" required>
+                
+                <label form="gender">Jenis Kelamin :</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                </select>
 
-              <br />
-              Jenis Kelamin :
-              <input type="radio" id="male" name="gender" value="male" />
-              <label for="male">Laki-laki</label>
-              <input type="radio" id="female" name="gender" value="male" />
-              <label for="female">Perempuan</label>
-              <br />
-
-              <br />
-              <p>Pesan :</p>
-              <textarea rows="8" cols="64" name="messages"></textarea>
-              <br />
-
-              <input type="submit" value="Submit" />       
+                <label form="message">Pesan :</label>
+                <textarea id="message" name="message" placeholder="Masukkan Pesan" required></textarea>
+                <button type="submit">Submit</button>
             </form>
-            </section>
 
+            <br />
+        
             <!--Result Form-->
-            <div>                
-                <p>Nama : <span id="sender-full-name"></span></p>
-                <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
-                <p>Jenis Kelamin : <span id="sender-gender"></span></p>
-                <p>Pesan : <span id="sender-messages"></span></p>
-            </div>
+            <label for="formOutput">Output :</label>
+            <textarea id="formOutput" placeholder="Data akan muncul di sini" readonly></textarea>
         </section>
     </main>
 
@@ -142,5 +139,7 @@
     <footer>
         <div align="end">Made by Hisyam</div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
