@@ -12,45 +12,38 @@ function replaceName() {
 
 // Form //
 
-const form = document.getElementById('messageForm');
-form.addEventListener('submit'), function(event) {
-  event.preventDefault();
-
+function validateform() {
   const name = document.getElementById('name').value;
   const birth = document.getElementById('birth').value;
   const gender = document.getElementById('gender').value;
   const message = document.getElementById('message').value;
 
+
   if (!name || !birth || !gender || !message) {
       alert('Pesan Harus Terisi');
-      return;
+      return false;
   }
+
+  setSenderUI(name, birth, gender, message);
+
+  return false;
+}
 
   // Output Form //
+  function setSenderUI (name, birth, gender, message) {
+    document.getElementById("name").innerHTML = name;
+    document.getElementById("birth").innerHTML = birth;
+    document.getElementById("gender").innerHTML = gender;
+    document.getElementById("message").innerHTML = message;
 
-  const formOutput = document.getElementById('formOutput'); 
-    formOutput.value = 
-        Name ; {name}
-        Birth ; {birth}
-        Gender ; {gender}
-        Message ; {message}
-    ;
     
-  document.getElementById('moreInfoBtn').addEventListener('click', function() {
-      const moreInfo = document.getElementById('moreInfo');
-      if (moreInfo.style.display === 'none') {
-          moreInfo.style.display = 'block';
-          this.textContent = 'Sembunyikan Info';
-      } else {
-          moreInfo.style.display = 'none';
-          this.textContent = 'Lebih banyak Info';
-      }
-  });
+// Validasi Form //
+    if (!name || !birth || !gender || !message) {
+       alert('Pesan Harus Terisi');
 
-  if (!name || !birth || !gender || !message) {
-      alert('Pesan Harus Terisi');
-      return;
-  }
-}
+       return false;
+}};
+
+
   
 
