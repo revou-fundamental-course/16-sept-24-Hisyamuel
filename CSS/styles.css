@@ -63,13 +63,18 @@ nav>ul>li>a:hover {
 
 /* Kata Sambutan */
 
+header {
+    text-align: center;
+}
+
 header>h1 {
+    text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000080;
 }
 
-p {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+article>p {
+    text-align: center;
 }
 
 /* Photo Banner Slide */
@@ -117,8 +122,13 @@ p {
 
 /* My Profile */
 
+header>p {
+    text-align: start;
+}
+
 .logo-profile {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .logo-profile1 {
@@ -150,7 +160,12 @@ p {
 
 /* Portfolio */
 
+.logo-container {
+    text-align: center;
+}
+
 .logo-portfolio {
+    display: inline-block;
     height: 100px;
     width: 100px;
     background-image: url(../assets/foto-diri.jpg);
