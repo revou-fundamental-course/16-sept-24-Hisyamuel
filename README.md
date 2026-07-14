@@ -1,4 +1,4 @@
-# Personal Web Portfolio - Nur Amali Hisyam 🚀
+# Personal Web Portfolio - Nur Amali Hisyam 
 
 Selamat datang di repositori Web Portfolio pribadi saya! Website ini dibangun untuk menampilkan perjalanan karir, keterampilan teknis, proyek-proyek yang telah saya kerjakan, serta sertifikasi yang saya peroleh sebagai seorang **Front-End Developer**.
 
@@ -6,16 +6,16 @@ Selamat datang di repositori Web Portfolio pribadi saya! Website ini dibangun un
 
 ---
 
-## ✨ Fitur Utama (Key Features)
+## Fitur Utama (Key Features)
 
 Website ini dirancang dengan fokus pada **User Experience (UX)** dan **User Interface (UI)** yang modern, bersih, dan interaktif:
 
-- 📱 **Fully Responsive Design:** Tampilan yang beradaptasi dengan sempurna di semua perangkat (Desktop, Tablet, dan Smartphone) menggunakan arsitektur CSS Flexbox dan Grid. Dilengkapi dengan *Hamburger Sidebar Menu* untuk navigasi mobile.
-- 🌓 **Dark Mode / Light Mode Toggle:** Fitur pergantian tema yang menyimpan preferensi pengguna menggunakan `LocalStorage`, memberikan kenyamanan visual (menggunakan palet warna *Deep Navy* untuk mode gelap).
-- ♾️ **Infinite Marquee Scroll:** Animasi berjalan otomatis tanpa putus (infinite loop) pada bagian *Tech Stack* dan *Certifications*. Animasi ini dilengkapi fitur *pause-on-hover* untuk memudahkan interaksi pengguna.
-- 🍱 **Bento Grid Layout:** Menampilkan daftar proyek dalam tata letak *Bento Grid* bergaya modern dengan efek *glassmorphism* dan overlay interaktif saat di-hover.
-- ⏳ **Experience Timeline:** Garis waktu (timeline) vertikal yang melacak riwayat pengalaman profesional dan program studi independen secara rapi.
-- 🔔 **Custom Notification & Greeting:** Pop-up sapaan awal saat website dimuat dan sistem notifikasi *Toast* kustom saat mengirim pesan.
+- **Fully Responsive Design:** Tampilan yang beradaptasi dengan sempurna di semua perangkat (Desktop, Tablet, dan Smartphone) menggunakan arsitektur CSS Flexbox dan Grid. Dilengkapi dengan *Hamburger Sidebar Menu* untuk navigasi mobile.
+- **Dark Mode / Light Mode Toggle:** Fitur pergantian tema yang menyimpan preferensi pengguna menggunakan `LocalStorage`, memberikan kenyamanan visual (menggunakan palet warna *Deep Navy* untuk mode gelap).
+- **Infinite Marquee Scroll:** Animasi berjalan otomatis tanpa putus (infinite loop) pada bagian *Tech Stack* dan *Certifications*. Animasi ini dilengkapi fitur *pause-on-hover* untuk memudahkan interaksi pengguna.
+- **Bento Grid Layout:** Menampilkan daftar proyek dalam tata letak *Bento Grid* bergaya modern dengan efek *glassmorphism* dan overlay interaktif saat di-hover.
+- **Experience Timeline:** Garis waktu (timeline) vertikal yang melacak riwayat pengalaman profesional dan program studi independen secara rapi.
+- **Custom Notification & Greeting:** Pop-up sapaan awal saat website dimuat dan sistem notifikasi *Toast* kustom saat mengirim pesan.
 
 ---
 
