@@ -131,7 +131,7 @@ a {
 .logo-icon {
     width: 45px;
     height: 45px;
-    background-image: url(../assets/channels4_profile.jpg);
+    background-image: url(../assets/design/channels4_profile.jpg);
     background-size: cover;
     border-radius: 50%;
     border: 2px solid var(--accent-yellow);
@@ -263,7 +263,6 @@ a {
 
 .social-list a:hover {
     background: var(--text-color);
-    color: var(--accent-yellow);
     transform: translateY(-5px);
 }
 
@@ -778,7 +777,6 @@ button[type="submit"]:hover {
 
 .contact-row a:hover {
     color: var(--accent-yellow);
-    text-decoration: underline;
 }
 
 .footer-socials {
