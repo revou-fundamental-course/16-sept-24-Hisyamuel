@@ -50,7 +50,7 @@ main {
     animation: fadeIn 0.5s ease-out;
 }
 
-main > section {
+main>section {
     counter-increment: section-index;
 }
 
@@ -59,6 +59,7 @@ main > section {
         opacity: 0;
         transform: translateY(14px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -248,7 +249,7 @@ h2 {
     margin-bottom: 20px;
     display: inline-block;
     padding-bottom: 8px;
-    border-bottom: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--border-strong);
 }
 
 #user {
@@ -304,7 +305,7 @@ body.dark-mode .hero-title .highlight {
 .hero-image img {
     width: 100%;
     max-width: 370px;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 3;
     height: auto;
     border-radius: 0;
     border: 2px solid var(--border-strong);
@@ -410,19 +411,70 @@ body.dark-mode .slider-frame {
 }
 
 @keyframes slide_animation {
-    0%, 6% { transform: translateX(0); }
-    8.33%, 14.33% { transform: translateX(-8.3333%); }
-    16.66%, 22.66% { transform: translateX(-16.6666%); }
-    25%, 31% { transform: translateX(-25%); }
-    33.33%, 39.33% { transform: translateX(-33.3333%); }
-    41.66%, 47.66% { transform: translateX(-41.6666%); }
-    50%, 56% { transform: translateX(-50%); }
-    58.33%, 64.33% { transform: translateX(-58.3333%); }
-    66.66%, 72.66% { transform: translateX(-66.6666%); }
-    75%, 81% { transform: translateX(-75%); }
-    83.33%, 89.33% { transform: translateX(-83.3333%); }
-    91.66%, 97.66% { transform: translateX(-91.6666%); }
-    100% { transform: translateX(0); }
+
+    0%,
+    6% {
+        transform: translateX(0);
+    }
+
+    8.33%,
+    14.33% {
+        transform: translateX(-8.3333%);
+    }
+
+    16.66%,
+    22.66% {
+        transform: translateX(-16.6666%);
+    }
+
+    25%,
+    31% {
+        transform: translateX(-25%);
+    }
+
+    33.33%,
+    39.33% {
+        transform: translateX(-33.3333%);
+    }
+
+    41.66%,
+    47.66% {
+        transform: translateX(-41.6666%);
+    }
+
+    50%,
+    56% {
+        transform: translateX(-50%);
+    }
+
+    58.33%,
+    64.33% {
+        transform: translateX(-58.3333%);
+    }
+
+    66.66%,
+    72.66% {
+        transform: translateX(-66.6666%);
+    }
+
+    75%,
+    81% {
+        transform: translateX(-75%);
+    }
+
+    83.33%,
+    89.33% {
+        transform: translateX(-83.3333%);
+    }
+
+    91.66%,
+    97.66% {
+        transform: translateX(-91.6666%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .slider-frame:hover .slide-images {
@@ -457,8 +509,13 @@ body.dark-mode .slider-frame {
 }
 
 @keyframes scrollAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .slider-container:hover .slider-track {
@@ -970,7 +1027,7 @@ button[type="submit"]:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.footer-bottom > p {
+.footer-bottom>p {
     font-size: 0.82rem;
     letter-spacing: 0.04em;
     color: var(--text-white);
@@ -1010,7 +1067,7 @@ button[type="submit"]:hover {
     color: var(--primary-navy);
 }
 
-/* NOTIFIKASI TOAST & MODAL (SWISS SHARP STYLE) */
+/* NOTIFIKASI TOAST & MODAL */
 .toast-container {
     position: fixed;
     top: 20px;
@@ -1036,9 +1093,17 @@ button[type="submit"]:hover {
     animation: slideInRight 0.35s ease forwards;
 }
 
-.toast.success { border-left-color: #2ecc71; }
-.toast.error { border-left-color: #e74c3c; }
-.toast.info { border-left-color: var(--accent-yellow); }
+.toast.success {
+    border-left-color: #2ecc71;
+}
+
+.toast.error {
+    border-left-color: #e74c3c;
+}
+
+.toast.info {
+    border-left-color: var(--accent-yellow);
+}
 
 .toast-icon {
     font-size: 1rem;
@@ -1072,12 +1137,22 @@ button[type="submit"]:hover {
 }
 
 @keyframes slideInRight {
-    from { transform: translateX(120%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideOutRight {
-    to { transform: translateX(120%); opacity: 0; }
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
 }
 
 .confirm-overlay {
@@ -1177,17 +1252,201 @@ button[type="submit"]:hover {
 }
 
 @keyframes fadeInOverlay {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes popIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* =========================================
+   SCROLL REVEAL SYSTEM
+   ========================================= */
+
+html.reveal-ready [data-reveal] {
+    opacity: 0;
+}
+
+html.reveal-ready [data-reveal].is-revealed {
+    opacity: 1;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-delay: var(--reveal-delay, 0ms);
+    animation-fill-mode: backwards;
+}
+
+/* 1. Judul Seksi (Unmasking Tipografi) */
+html.reveal-ready [data-reveal="title"].is-revealed {
+    animation-name: revealTitle;
+}
+
+@keyframes revealTitle {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 -12px 0);
+    }
+}
+
+/* 2. Teks Hero & Baris Form (Naik Presisi) */
+html.reveal-ready [data-reveal="rise"].is-revealed {
+    animation-name: revealRise;
+}
+
+@keyframes revealRise {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3. Ikon Sosial Kotak (Pop Arsitektural) */
+html.reveal-ready [data-reveal="square"].is-revealed {
+    animation-name: revealSquare;
+    animation-duration: 0.55s;
+}
+
+@keyframes revealSquare {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 4. Bingkai Foto & Slider (Terangkat dari Hard Shadow) */
+html.reveal-ready [data-reveal="frame"].is-revealed {
+    animation-name: revealFrame;
+    animation-duration: 0.85s;
+}
+
+@keyframes revealFrame {
+    from {
+        opacity: 0;
+        transform: translate(18px, 18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* 5. Paragraf About Me (Bergeser dari Garis Kiri) */
+html.reveal-ready [data-reveal="slide-left"].is-revealed {
+    animation-name: revealSlideLeft;
+}
+
+@keyframes revealSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-26px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 6. Kartu Grid (Education, Project, Form Box, Kolom Footer) */
+html.reveal-ready [data-reveal="card"].is-revealed {
+    animation-name: revealCard;
+    animation-duration: 1s;
+}
+
+@keyframes revealCard {
+    from {
+        opacity: 0;
+        transform: translateY(34px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7. Jalur Marquee Horizontal (Tech Stack & Certifications) */
+html.reveal-ready [data-reveal="marquee"].is-revealed {
+    animation-name: revealMarquee;
+    animation-duration: 1s;
+}
+
+@keyframes revealMarquee {
+    from {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0% 0 0);
+    }
+}
+
+/* 8. Baris Tabel Experiences (Indeks Tabular) */
+html.reveal-ready [data-reveal="row"].is-revealed {
+    animation-name: revealRow;
+    animation-duration: 0.95s;
+}
+
+@keyframes revealRow {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Aksesibilitas untuk pengguna yang menonaktifkan animasi sistem */
+@media (prefers-reduced-motion: reduce) {
+    html.reveal-ready [data-reveal] {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+        clip-path: none !important;
+    }
 }
 
 /* RESPONSIVE BREAKPOINTS (MOBILE & TABLET) */
@@ -1239,8 +1498,16 @@ button[type="submit"]:hover {
         padding: 14px 20px;
     }
 
+    .section-title {
+        font-size: 1.85rem;
+    }
+
     .container {
         padding: 60px 20px;
+    }
+
+    .theme-toggle {
+        margin-left: 95px;
     }
 
     .nav-menu {
@@ -1270,7 +1537,7 @@ button[type="submit"]:hover {
 
     .nav-menu li {
         width: 100%;
-        text-align: left;
+        text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         padding-bottom: 10px;
     }

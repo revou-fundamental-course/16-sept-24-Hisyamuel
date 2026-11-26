@@ -1,26 +1,28 @@
 // Ini Sambutan //
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.customNotify) {
-        window.customNotify.showConfirm(
-            "Halo! Selamat datang. Silahkan masukkan nama Anda :",
-            (namaInput) => {
-                const name = namaInput && namaInput.trim() !== "" ? namaInput : "Guest";
-                const userElement = document.getElementById("user");
-                if (userElement) {
-                    userElement.innerText = name;
-                    window.customNotify.showToast(`Halo ${name}, selamat datang di web portfolio saya`, "info");
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(() => {
+        if (window.customNotify) {
+            window.customNotify.showConfirm(
+                "Halo! Selamat datang. Silahkan masukkan nama Anda :",
+                (namaInput) => {
+                    const name = namaInput && namaInput.trim() !== "" ? namaInput : "Guest";
+                    const userElement = document.getElementById("user");
+                    if (userElement) {
+                        userElement.innerText = name;
+                        window.customNotify.showToast(`Halo ${name}, selamat datang di web portfolio saya`, "info");
+                    }
+                },
+                () => {
+                    window.customNotify.showToast("Menjelajah sebagai Tamu", "info");
+                },
+                {
+                    title: "Greetings!",
+                    confirmText: "Simpan",
+                    cancelText: "Lewati"
                 }
-            },
-            () => {
-                window.customNotify.showToast("Menjelajah sebagai Tamu", "info");
-            },
-            {
-                title: "Greetings!",
-                confirmText: "Simpan",
-                cancelText: "Lewati"
-            }
-        );
-    }
+            );
+        }
+    }, 1500);
 });
 
 // Dark Mode //
@@ -36,7 +38,7 @@ if (localStorage.getItem('theme') === 'dark') {
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    
+
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
         icon.classList.replace('ph-moon', 'ph-sun');
@@ -66,7 +68,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 // Form submission using Fetch to Formspree
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const formspreeEndpoint = 'https://formspree.io/f/mrekpbkl';
@@ -126,10 +128,73 @@ if (backToTopBtn) {
     backToTopBtn.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth" 
+            behavior: "smooth"
         });
     });
 }
 
-  
+// =========================================
+// SCROLL REVEAL ANIMATION
+// =========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const revealGroups = [
+        // Hero Section
+        { selector: '.hero-content .greeting, .hero-content .hero-title, .hero-content .hero-subtitle, .hero-content .hero-desc', type: 'rise', stagger: 110 },
+        { selector: '.social-list .icon-content', type: 'square', stagger: 90, baseDelay: 350 },
+        { selector: '.hero-image', type: 'frame', stagger: 0, baseDelay: 200 },
+
+        // Judul Tiap Seksi
+        { selector: '.section-title', type: 'title', stagger: 0 },
+
+        // About Me
+        { selector: '.about-content p', type: 'slide-left', stagger: 0, baseDelay: 100 },
+        { selector: '.slider-frame', type: 'frame', stagger: 0, baseDelay: 200 },
+
+        // Kartu Education & Project (Muncul satu-persatu per grid)
+        { selector: '.education-grid .education-card', type: 'card', stagger: 150 },
+        { selector: '.project-grid .project-card', type: 'card', stagger: 140 },
+
+        // Jalur Marquee Tech Stack & Certifications
+        { selector: '.slider-container', type: 'marquee', stagger: 0, baseDelay: 100 },
+
+        // Baris Daftar Experiences (Muncul satu-persatu ke bawah)
+        { selector: '.timeline-container .timeline-item', type: 'row', stagger: 90 },
+
+        // Form Message & Input di dalamnya
+        { selector: '.form-container', type: 'card', stagger: 0 },
+        { selector: '#contact-form > *', type: 'rise', stagger: 100, baseDelay: 150 },
+
+        // Kolom Footer
+        { selector: '.footer-container .footer-section', type: 'card', stagger: 130 }
+    ];
+
+    const targets = [];
+
+    revealGroups.forEach(({ selector, type, stagger = 0, baseDelay = 0 }) => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((el, index) => {
+            el.setAttribute('data-reveal', type);
+            el.style.setProperty('--reveal-delay', `${baseDelay + index * stagger}ms`);
+            targets.push(el);
+        });
+    });
+
+    // Aktifkan state siap animasi setelah seluruh target ditandai
+    document.documentElement.classList.add('reveal-ready');
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    targets.forEach((el) => observer.observe(el));
+});
+
 

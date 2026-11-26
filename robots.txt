@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nuramalihisyam.netlify.app/sitemap.xml
